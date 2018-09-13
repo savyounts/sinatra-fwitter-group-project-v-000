@@ -41,6 +41,7 @@ class UsersController < ApplicationController
   end
 
   get '/users/:id' do
+    if current_user.id == params[:id]
     @user = User.find(params[:id])
     erb :'/users/show'
   end
