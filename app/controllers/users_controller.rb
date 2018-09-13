@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  get '/' do 
-    erb :index 
+  get '/' do
+    erb :index
   end
 end
