@@ -1,1 +1,6 @@
-all tweets
+<h2>All the tweets</h2>
+<ul>
+  <% @tweets.each do |t| %>
+    <li><%= t.content %></li>
+  <% end %>
+</ul>
