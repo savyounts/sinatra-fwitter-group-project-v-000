@@ -26,8 +26,8 @@ class UsersController < ApplicationController
     if logged_in?
       redirect '/tweets'
     else
-    erb :'/users/login'
-  end
+      erb :'/users/login'
+    end
   end
 
   post '/login' do
@@ -50,7 +50,15 @@ class UsersController < ApplicationController
     redirect '/login'
   end
 
+  helpers do
+    def logged_in?
+      !!session[:user.id]
+    end
 
+    def current_user(session_hash)
+      User.find(session_hash[:user_id])
+    end
+      
 
 
 
