@@ -2,8 +2,8 @@
 
 <h4>Your Tweets:</h4>
 <ul>
-  <%=@user.tweets.each do |t| %>
-    <li><%= t.content  %></li>
+  <% @user.tweets.each do |t| %>
+    <li><%= t.content %></li>
   <% end %>
 </ul>
 
