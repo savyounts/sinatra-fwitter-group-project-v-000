@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates :username, presence: true
   validates :email, presence: true
 
-  def slug 
-    name.split(" ").join("-")
+  def slug
+    name.split(" ").join("-").downcase
   end
 end
