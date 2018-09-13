@@ -4,12 +4,12 @@ class UsersController < ApplicationController
     erb :index
   end
 
-  get '/signup' do
+  get '/tweets/signup' do
 
     erb :'/users/create_user'
   end
 
-  post '/signup' do
+  post 'tweets/signup' do
     @user = User.create(username: params[:username], email: params[:email], password: params[:password])
     session[:user_id] = @user.id
     redirect "/tweets"
