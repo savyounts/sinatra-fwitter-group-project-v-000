@@ -42,8 +42,9 @@ class UsersController < ApplicationController
 
   get '/users/:id' do
     if current_user.id == params[:id]
-    @user = User.find(params[:id])
-    erb :'/users/show'
+      @user = User.find(params[:id])
+      erb :'/users/show'
+    end
   end
 
   get '/logout' do
