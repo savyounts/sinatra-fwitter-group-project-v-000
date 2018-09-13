@@ -50,6 +50,8 @@ class UsersController < ApplicationController
     redirect '/login'
   end
 
+
+
   helpers do
     def logged_in?
       !!session[:user.id]
