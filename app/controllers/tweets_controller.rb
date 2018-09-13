@@ -28,6 +28,7 @@ class TweetsController < ApplicationController
 
   get '/tweets/:id' do
     @tweet = Tweet.find(params[:id])
+    # use current_user to find user
     erb :'tweets/show'
   end
 
