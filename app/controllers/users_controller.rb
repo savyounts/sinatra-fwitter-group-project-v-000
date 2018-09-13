@@ -4,28 +4,28 @@ class UsersController < ApplicationController
     erb :index
   end
 
-  get '/users/create_user' do 
+  get '/users/create_user' do
 
     erb :'/users/create_user'
-  end 
+  end
 
-  post '/users/create_users' do 
+  post '/users/create_users' do
 
-  end 
+  end
 
-  get '/users/login' do 
+  get '/users/login' do
 
     erb :'/users/login'
-  end 
+  end
 
-  post '/users/login' do 
+  post '/users/login' do
 
-  end 
+  end
 
-  get '/users/:id'
+  get '/users/:id' do 
 
     erb :'/users/show'
-  end 
+  end
 
-  
+
 end
