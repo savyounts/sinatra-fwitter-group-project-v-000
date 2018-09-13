@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   get '/users/:id' do
-    @user = User.find(session[:user_id])
+    @user = User.find(params[:id])
     erb :'/users/show'
   end
 
