@@ -5,11 +5,7 @@ class UsersController < ApplicationController
   end
 
   get '/signup' do
-    if logged_in?
-      redirect '/tweets'
-    else
       erb :'/users/create_user'
-    end
   end
 
   post '/signup' do
@@ -23,11 +19,7 @@ class UsersController < ApplicationController
   end
 
   get '/login' do
-    if logged_in?
-      redirect '/tweets'
-    else
       erb :'/users/login'
-    end
   end
 
   post '/login' do
