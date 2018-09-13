@@ -1,7 +1,13 @@
-<h3>Login</h3>
 
-<form action="/login" method="post">
-  <input type="text" name="username" placeholder="Username">
-  <input type="password" name="password" placeholder="Password">
-  <input type="submit" value="Login">
-</form>
+<% if !@user.logged_in? %>
+  <h3>Login</h3>
+
+  <form action="/login" method="post">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <input type="submit" value="Login">
+  </form>
+<% else %>
+  <%= erb :'/tweets/tweets' %>
+  <a href="/logout">Log Out</a>
+<% end %>
