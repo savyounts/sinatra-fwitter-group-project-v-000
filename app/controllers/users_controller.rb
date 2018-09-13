@@ -55,10 +55,10 @@ class UsersController < ApplicationController
       !!session[:user.id]
     end
 
-    def current_user(session_hash)
-      User.find(session_hash[:user_id])
+    def current_user
+      User.find(session[:user_id])
     end
-      
+
 
 
 
