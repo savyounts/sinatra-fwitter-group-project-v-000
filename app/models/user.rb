@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   def slug
     name.split(" ").join("-").downcase
   end
+
+  def self.find_by_slug(slug)
+    self.find{|user| user.name.slug == slug}
+  end
 end
