@@ -4,23 +4,23 @@ class UsersController < ApplicationController
     erb :index
   end
 
-  get '/users/signup' do
+  get '/signup' do
 
     erb :'/users/create_user'
   end
 
-  post '/users/signup' do
+  post '/signup' do
     @user = User.create(params)
     session[:user_id] = @user.id
     redirect ''
   end
 
-  get '/users/login' do
+  get '/login' do
 
     erb :'/users/login'
   end
 
-  post '/users/login' do
+  post '/login' do
      @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     erb :'/users/show'
   end
 
-  get 'users/logout' do
+  get '/logout' do
     @user = User.find(session[:id])
     session.clear
     redirect '/users/login'
