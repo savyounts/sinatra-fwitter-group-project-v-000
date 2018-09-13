@@ -1,7 +1,6 @@
 
-<% if Helpers.logged_in?(@session) %>
+<% if @user.logged_in? %>
   <%= redirect '/tweets' %>
-  <a href="/logout">Log Out</a>
 <% else %>
   <h3>Login</h3>
 
