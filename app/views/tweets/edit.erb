@@ -2,6 +2,6 @@
 
 <form action="/tweets/<%= @tweet.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
-  <textarea name="content" placeholder="Write Your Tweet Here"></textarea><br>
-  <input type="submit" value="Post">
+  <textarea name="content" value='<%= @tweet.content %>'></textarea><br>
+  <input type="submit" value="Edit">
 </form>
