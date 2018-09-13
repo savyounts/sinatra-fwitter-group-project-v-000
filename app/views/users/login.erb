@@ -1,5 +1,5 @@
 
-<% if !logged_in? %>
+<% if !Helper.logged_in?(session) %>
   <h3>Login</h3>
 
   <form action="/login" method="post">
