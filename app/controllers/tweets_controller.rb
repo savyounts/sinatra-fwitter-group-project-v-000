@@ -6,12 +6,11 @@ class TweetsController < ApplicationController
   end
 
   get '/tweets/new' do
-
     erb :'/tweets/new'
   end
 
   post '/tweets' do
-    @tweet = Tweet.create(params)
+    @tweet = Tweet.create(content: params[:content])
     redirect '/tweets/:id'
   end
 
@@ -23,7 +22,7 @@ class TweetsController < ApplicationController
   patch '/tweets/:id' do
     @tweet = Tweet.find(params[:id])
     @tweet.update(params)
-    
+
     redirect "/tweets/#{@tweet.id}"
   end
 
