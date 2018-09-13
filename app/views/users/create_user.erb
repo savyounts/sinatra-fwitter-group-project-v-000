@@ -1,13 +1,12 @@
 <% if logged_in? %>
+  <h3>Sign Up</h3>
+  <form action="/signup" method="post">
+    <input type="text" name="username" placeholder="Username">
+    <input type="email" name="email" placeholder="Email">
+    <input type="password" name="password" placeholder="Password">
+    <input type="submit" value="Sign Up">
+  </form>
 
-<% erb :'/tweets/tweets' %>
 <%else%>
-<h3>Sign Up</h3>
-<form action="/signup" method="post">
-  <input type="text" name="username" placeholder="Username">
-  <input type="email" name="email" placeholder="Email">
-  <input type="password" name="password" placeholder="Password">
-  <input type="submit" value="Sign Up">
-</form>
-
-  <%end %>
+    <h2> youre logged in </h2>
+    <%end %>
