@@ -40,8 +40,8 @@ class UsersController < ApplicationController
     end
   end
 
-  get '/users/:id' do
-    @user = User.find(params[:id])
+  get '/users/:slug' do
+    @user = User.find_by_slug(params[:slug])
     if current_user.id == @user.id
       erb :'/users/show'
     else
