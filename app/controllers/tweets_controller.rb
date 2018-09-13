@@ -43,7 +43,7 @@ class TweetsController < ApplicationController
       redirect "/tweets"
     end
   end
-    
+
 
   get '/tweets/:id' do
     if logged_in?
