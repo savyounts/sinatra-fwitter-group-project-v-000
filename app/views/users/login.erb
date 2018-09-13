@@ -1,7 +1,11 @@
-<h3>Login</h3>
+<% if logged_in? %>
+  <h3>Login</h3>
 
-  <form action="/login" method="post">
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
-    <input type="submit" value="Login">
-  </form>
+    <form action="/login" method="post">
+      <input type="text" name="username" placeholder="Username">
+      <input type="password" name="password" placeholder="Password">
+      <input type="submit" value="Login">
+    </form>
+<%else%>
+    <h2> youre logged in </h2>
+<%end %>
