@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   end
 
   get '/login' do
+    @session = session
     erb :'/users/login'
   end
 
