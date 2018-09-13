@@ -36,6 +36,10 @@ class UsersController < ApplicationController
   end
 
   get 'users/logout' do
+    @user = User.find(session[:id])
+    session.clear 
+    redirect '/users/login'
+  end 
 
 
 
