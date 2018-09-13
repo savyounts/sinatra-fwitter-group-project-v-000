@@ -4,13 +4,15 @@ class UsersController < ApplicationController
     erb :index
   end
 
-  get '/users/create_user' do
+  get '/users/signup' do
 
     erb :'/users/create_user'
   end
 
-  post '/users/create_users' do
-
+  post '/users/signup' do
+    @user = User.create(params)
+    session[:user_id] = @user.id 
+    redirect ''
   end
 
   get '/users/login' do
@@ -22,7 +24,7 @@ class UsersController < ApplicationController
 
   end
 
-  get '/users/:id' do 
+  get '/users/:id' do
 
     erb :'/users/show'
   end
