@@ -41,9 +41,11 @@ class UsersController < ApplicationController
   end
 
   get '/users/:id' do
-    if current_user.id == params[:id]
-      @user = User.find(params[:id])
+    @user = User.find(params[:id])
+    if current_user.id == @user.id
       erb :'/users/show'
+    else
+      redirect '/login'
     end
   end
 
