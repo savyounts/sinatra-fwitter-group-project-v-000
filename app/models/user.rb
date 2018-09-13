@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true
 
   def slug
-    self.name.split(" ").join("-").downcase
+    self.username.split(" ").join("-").downcase
   end
 
   def self.find_by_slug(slug)
