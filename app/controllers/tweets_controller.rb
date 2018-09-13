@@ -67,7 +67,7 @@ class TweetsController < ApplicationController
     if @tweet.user_id == current_user.id
       @tweet.destroy
       redirect '/tweets'
-    else 
+    else
       redirect '/tweets'
     end  
   end
