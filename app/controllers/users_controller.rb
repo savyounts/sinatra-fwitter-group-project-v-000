@@ -5,11 +5,7 @@ class UsersController < ApplicationController
   end
 
   get '/signup' do
-    if logged_in?
-      redirect '/tweets'
-    else
       erb :'/users/create_user'
-    end
   end
 
   post '/signup' do
@@ -54,7 +50,7 @@ class UsersController < ApplicationController
 
   helpers do
     def logged_in?
-      !!session[:user.id]
+      !!session[:user_id]
     end
 
     def current_user
