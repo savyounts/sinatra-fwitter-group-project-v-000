@@ -22,6 +22,8 @@ class TweetsController < ApplicationController
 
   patch '/tweets/:id' do
     @tweet = Tweet.find(params[:id])
+    @tweet.update(params)
+    
     redirect "/tweets/#{@tweet.id}"
   end
 
